@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increase decrease button</title>
+</head>
+
+<style>
+    body {
+        background-color: aqua;
+    }
+
+    .counter {
+        margin-top: 180px;
+        margin-left: 570px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 20%;
+
+        padding: 25px;
+        text-align: center;
+        background: #ffffff;
+        border: 5px groove transparent;
+        border-radius: 5px;
+        color: #bbb;
+    }
+
+    .counter h1 {
+        color: #000;
+        font-size: 18px;
+    }
+
+    #count {
+        font-size: 4rem;
+    }
+</style>
+
+<body>
+
+
+    <label>
+        <div class="container">
+            <div class="counter">
+                <h1>COUNTER</h1>
+                <h1 id="count">0</h1>
+                <div id="buttons">
+                    <button class="btn btn-outline-dark" id="increase">Increase</button>
+                    <button class="btn btn-outline-dark" id="decrease">Decrease</button>
+                    <button class="btn btn-outline-dark" id="increaseBy2">2+</button>
+                    <button class="btn btn-outline-dark" id="increaseBy10">10+</button>
+
+                </div>
+            </div>
+        </div>
+    </label>
+
+
+    <script>
+
+        var count = 0;
+        document.querySelector("#increase").addEventListener("click", () => {
+            changeCount(1);
+        });
+        document.querySelector("#decrease").addEventListener("click", () => {
+            changeCount(-1);
+        });
+        document.querySelector("#increaseBy2").addEventListener("click", () => {
+            changeCount(2);
+        });
+        document.querySelector("#increaseBy10").addEventListener("click", () => {
+            changeCount(10);
+        });
+
+        changeCount = (number) => {
+            count += number;
+            document.querySelector("#count").textContent = count;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
